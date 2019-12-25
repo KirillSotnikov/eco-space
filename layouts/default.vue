@@ -5,6 +5,7 @@
   <v-app>
     <v-navigation-drawer v-model="isDrawer" app>
       <!-- -->
+      <app-drawer />
     </v-navigation-drawer>
 
     <v-app-bar app>
@@ -56,14 +57,18 @@
       </v-container>
     </v-content>
 
-    <v-footer app>
-      <!-- -->
-    </v-footer>
+    <app-footer />
   </v-app>
 </template>
 
 <script>
+import appDrawer from '@/components/Drawer.vue'
+import appFooter from '@/components/Footer.vue'
 export default {
+  components: {
+    'app-drawer': appDrawer,
+    'app-footer': appFooter
+  },
   data () {
     return {
       isDrawer: false

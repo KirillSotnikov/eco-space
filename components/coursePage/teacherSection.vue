@@ -14,7 +14,7 @@
         >
           <v-img
             height="100%"
-            src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg"
+            :src="teacher.backgroundUrl"
           >
             <v-row
               align="end"

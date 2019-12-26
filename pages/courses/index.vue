@@ -37,14 +37,17 @@
         </v-lazy>
       </v-tab-item>
     </v-tabs>
+    <app-reviews-list title="Reviews list" :count="3" />
   </div>
 </template>
 
 <script>
 import CardList from '@/components/MainPage/CardList.vue'
+import reviewsList from '@/components/coursePage/reviewsList.vue'
 export default {
   components: {
-    'app-card-list': CardList
+    'app-card-list': CardList,
+    'app-reviews-list': reviewsList
   },
   data () {
     return {

@@ -50,6 +50,7 @@
             <v-btn
               color="orange"
               text
+              to="contact-us"
             >
               Book now
             </v-btn>

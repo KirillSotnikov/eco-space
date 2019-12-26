@@ -3,6 +3,8 @@
   <div>
     <app-slider />
     <app-card-list title="Popular courses" :subjects="subjects" />
+    <app-about-gallery />
+    <app-reviews-list title="Courses reviews" :count="3" />
   </div>
 </template>
 
@@ -10,11 +12,15 @@
 
 import Slider from '@/components/MainPage/Slider'
 import CardList from '@/components/MainPage/CardList'
+import reviewsList from '@/components/coursePage/reviewsList.vue'
+import aboutUsGallery from '@/components/MainPage/aboutUsGallery.vue'
 
 export default {
   components: {
     'app-slider': Slider,
-    'app-card-list': CardList
+    'app-card-list': CardList,
+    'app-reviews-list': reviewsList,
+    'app-about-gallery': aboutUsGallery
   },
   data () {
     return {

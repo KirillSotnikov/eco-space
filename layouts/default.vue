@@ -12,7 +12,12 @@
       <!-- -->
        <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Eco Space</v-toolbar-title>
+      <v-toolbar-title >
+        <nuxt-link class="d-flex align-center header-link" to="/">
+          <v-icon style="margin-right: 5px;">mdi-compass</v-icon>
+          Eco Space
+        </nuxt-link>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -81,3 +86,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.header-link{
+  text-decoration: none;
+  color: #fff;
+}
+</style>

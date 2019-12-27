@@ -20,7 +20,7 @@
             {{work.title}}.
             Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
           </div>
-          <v-btn class="mt-2" tile outlined color="grey lighten-1" @click="readMore">
+          <v-btn class="mt-2" tile outlined color="grey lighten-1">
             Materials <v-icon right>mdi-download</v-icon>
           </v-btn>
         </div>

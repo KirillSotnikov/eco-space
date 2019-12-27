@@ -29,8 +29,8 @@
               dark
             >
               <v-list-item-content>
-                <v-list-item-title class="title">Marcus Obrien</v-list-item-title>
-                <v-list-item-subtitle>Network Engineer</v-list-item-subtitle>
+                <v-list-item-title class="title">{{title}}</v-list-item-title>
+                <v-list-item-subtitle v-if="duty">{{duty}}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-col>
@@ -117,7 +117,10 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
 
 export default {
   mixins: [validationMixin],
-
+  props: [
+    'title',
+    'duty'
+  ],
   validations: {
     name: { required, maxLength: maxLength(10) },
     email: { required, email },

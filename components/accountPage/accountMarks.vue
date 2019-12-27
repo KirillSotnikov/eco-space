@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <h2 class="marks-title">Marks</h2>
+    <h2 class="marks-title">{{title}}</h2>
     <v-data-iterator
       :items="items"
       :items-per-page.sync="itemsPerPage"
@@ -152,6 +152,9 @@
 
 <script>
 export default {
+  props: [
+    'title'
+  ],
   data () {
     return {
       itemsPerPageArray: [4, 8, 12],

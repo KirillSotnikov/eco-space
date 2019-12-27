@@ -14,17 +14,20 @@
     Incidunt cumque quibusdam quis aliquam. Ex deserunt cum nam maxime magnam. Ut iusto, debitis labore nemo, illum eaque, porro distinctio recusandae magnam deleniti aliquam eum impedit consequatur perspiciatis harum exercitationem.
     At minus officiis ut natus labore aspernatur neque quam repudiandae dolore architecto esse tempora dicta assumenda et nemo voluptatibus ipsam quasi praesentium, delectus necessitatibus? Accusantium doloremque similique minus optio magnam.
     Accusamus laudantium iure id, voluptate, illum laboriosam laborum iusto necessitatibus voluptatum optio aperiam perspiciatis! Sunt, odio! Eos blanditiis, quidem excepturi vero asperiores voluptatum accusantium assumenda iusto perferendis ea cupiditate amet.</p>
+    <app-comments />
   </v-container>
 </template>
 
 <script>
 import firstImage from '@/components/coursePage/firstImage.vue'
+import Comments from '@/components/Comments/commentForm.vue'
 export default {
   validate ({ params }) {
     return /^\d+$/.test(params.id)
   },
   components: {
-    'app-first-image': firstImage
+    'app-first-image': firstImage,
+    'app-comments': Comments
   },
   asyncData ({ params }) {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-account-info />
+    <app-account-info :title="`John Obrien`" :duty="`Network Engineer`" />
   </div>
 </template>
 

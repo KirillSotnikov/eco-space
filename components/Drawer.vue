@@ -48,14 +48,16 @@ export default {
         { title: 'Courses', icon: 'mdi-book-open-page-variant', href: '/courses' },
         { title: 'News', icon: 'mdi-newspaper', href: '/news' },
         { title: 'Reviews', icon: 'mdi-message-draw', href: '/reviews' },
+        { title: 'Booking', icon: 'mdi-application-import', href: '/booking' },
         { title: 'Contact Us', icon: 'mdi-contact-mail-outline', href: '/contact-us' }
 
       ],
       userLinks: [
-        { title: 'My Account', icon: 'mdi-account', href: '/account' },
+        { title: 'My Account', icon: 'mdi-account', href: '/users/1' },
         { title: 'Calendar', icon: 'mdi-calendar', href: '/calendar' },
         { title: 'Marks', icon: 'mdi-bookmark-multiple-outline', href: '/marks' },
-        { title: 'Home work', icon: 'mdi-briefcase-outline', href: '/home-work' }
+        { title: 'Home work', icon: 'mdi-briefcase-outline', href: '/home-work' },
+        { title: 'Groups', icon: 'mdi-account-multiple', href: '/groups' }
       ]
     }
   },

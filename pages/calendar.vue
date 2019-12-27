@@ -1,19 +1,17 @@
 <template>
-  <div>
-    <v-container fluid>
-      <v-row align="start">
-         <v-col class="d-flex" cols="12" sm="8">
-          <h1 class="calendar-title">Your calendar</h1>
-         </v-col>
-        <v-col class="d-flex" cols="12" sm="4">
-          <v-select
-            :items="month"
-            label="Month"
-            outlined
-          ></v-select>
+  <v-container fluid>
+    <v-row align="start">
+        <v-col class="d-flex" cols="12" sm="8">
+        <h1 class="calendar-title">Your calendar</h1>
         </v-col>
-      </v-row>
-    </v-container>
+      <v-col class="d-flex" cols="12" sm="4">
+        <v-select
+          :items="month"
+          label="Month"
+          outlined
+        ></v-select>
+      </v-col>
+    </v-row>
     <v-sheet height="500">
       <v-calendar
         type="month"
@@ -22,7 +20,7 @@
         :events="events"
       ></v-calendar>
     </v-sheet>
-  </div>
+  </v-container>
 </template>
 
 <script>

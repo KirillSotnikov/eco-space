@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <h1 class="reviews-title">{{title}}</h1>
+    <h2 class="reviews-title">{{title}}</h2>
     <v-row>
       <v-col cols="12" md="4" v-for="n in reviewsCount" :key="n">
         <v-card

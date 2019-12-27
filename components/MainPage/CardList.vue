@@ -1,9 +1,7 @@
 
 <template>
   <div>
-    <v-if title.length>
-      <h1 class="services-title">{{title}}</h1>
-    </v-if>
+    <h1 v-if="title" class="services-title">{{title}}</h1>
     <v-row>
       <v-col
         v-for="(subject, key) in subjects"
@@ -50,7 +48,7 @@
             <v-btn
               color="orange"
               text
-              to="contact-us"
+              to="/booking"
             >
               Book now
             </v-btn>

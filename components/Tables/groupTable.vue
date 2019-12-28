@@ -1,4 +1,6 @@
 <template>
+<v-container fluid>
+
   <v-data-table
     :headers="headers"
     :items="desserts"
@@ -29,23 +31,38 @@
         <v-icon>mdi-pencil-outline</v-icon>
       </v-btn>
       <v-btn
-        :to="`groups/delete/${item.name}`"
         class="ma-2"
         outlined
         small
         fab
         color="red accent-2"
+        @click="openDialog(item.name)"
       >
         <v-icon>mdi-delete-outline</v-icon>
       </v-btn>
     </template>
   </v-data-table>
+  <app-group-delete-dialog
+    firstColor="red darken-1"
+    secondColor="green darken-1"
+    :closeMethod="closeDialog"
+    :isActive="isActiveDialog"
+    :name="groupName"
+    title="Are you sure?"
+    :description="`You will delete group - ${groupName}`" />
+</v-container>
 </template>
 
 <script>
+import groupDeleteDialog from '@/components/Dialogs/groupDeleteDialog.vue'
 export default {
+  components: {
+    'app-group-delete-dialog': groupDeleteDialog
+  },
   data () {
     return {
+      groupName: '',
+      isActiveDialog: false,
       headers: [
         {
           text: 'Group name',
@@ -152,6 +169,14 @@ export default {
       } else {
         return 'red'
       }
+    },
+    openDialog (name) {
+      this.isActiveDialog = true
+      this.groupName = name
+    },
+    closeDialog () {
+      this.isActiveDialog = false
+      this.groupName = ''
     }
   }
 }

@@ -23,24 +23,21 @@
 
         <v-stepper-items>
           <v-stepper-content
-            v-for="n in steps"
-            :key="`${n}-content`"
-            :step="n"
+            step="1"
           >
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <app-first-step :selectedCourse="selectedCourse" :coursesList="coursesList" :nextStep="nextStep" />
+          </v-stepper-content>
 
-            <v-btn
-              color="primary"
-              @click="nextStep(n)"
-            >
-              Continue
-            </v-btn>
+          <v-stepper-content
+            step="2"
+          >
+            <app-second-step :nextStep="nextStep" />
+          </v-stepper-content>
 
-            <v-btn text>Cancel</v-btn>
+          <v-stepper-content
+            step="3"
+          >
+            <app-third-step :nextStep="nextStep" />
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
@@ -49,11 +46,32 @@
 </template>
 
 <script>
+import firstStep from '@/components/Booking/firstStep.vue'
+import secondStep from '@/components/Booking/secondStep.vue'
+import thirdStep from '@/components/Booking/thirdStep.vue'
 export default {
+  components: {
+    'app-first-step': firstStep,
+    'app-second-step': secondStep,
+    'app-third-step': thirdStep
+  },
   data () {
     return {
       e1: 1,
-      steps: 3
+      steps: 3,
+      selectedCourse: 'Geography',
+      coursesList: [
+        'Math',
+        'English',
+        'Biology',
+        'Geography',
+        'Physics',
+        'History',
+        'HTML + CSS',
+        'JavaScript',
+        'Guitar',
+        'Piano'
+      ]
     }
   },
 
@@ -67,11 +85,7 @@ export default {
 
   methods: {
     nextStep (n) {
-      if (n === this.steps) {
-        this.e1 = 1
-      } else {
-        this.e1 = n + 1
-      }
+      this.e1 = n
     }
   }
 }

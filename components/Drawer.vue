@@ -2,13 +2,22 @@
 <template>
   <div>
     <template>
-      <v-list-item two-line>
+      <v-list-item v-if="isAuthorised" two-line>
         <v-list-item-avatar>
           <img src="https://randomuser.me/api/portraits/women/81.jpg">
         </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title>Jane Smith</v-list-item-title>
           <v-list-item-subtitle>Logged In</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item v-else two-line>
+        <v-list-item-avatar>
+          <v-icon dark>mdi-account-circle</v-icon>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title>Guest</v-list-item-title>
+          <!-- <v-list-item-subtitle>Logged In</v-list-item-subtitle> -->
         </v-list-item-content>
       </v-list-item>
     </template>
@@ -58,7 +67,12 @@ export default {
         { title: 'Marks', icon: 'mdi-bookmark-multiple-outline', href: '/marks' },
         { title: 'Home work', icon: 'mdi-briefcase-outline', href: '/home-work' },
         { title: 'Groups', icon: 'mdi-account-multiple', href: '/groups' }
-      ]
+      ],
+      userInfo: {
+        avatar: 'https://randomuser.me/api/portraits/women/81.jpg',
+        firstName: 'Jane',
+        secondName: 'Smith'
+      }
     }
   },
   methods: {
@@ -68,3 +82,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.login-link{
+  font-size: 13px;
+  opacity: .7;
+}
+</style>

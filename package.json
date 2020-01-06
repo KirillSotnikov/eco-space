@@ -19,6 +19,7 @@
     "express": "^4.16.4",
     "nuxt": "^2.0.0",
     "vue-aos": "^1.0.1",
+    "vue-the-mask": "^0.11.1",
     "vuelidate": "^0.7.4"
   },
   "devDependencies": {

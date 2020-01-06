@@ -10,6 +10,18 @@
       </v-col>
       <app-reviews-list title="Course reviews" :count="count" />
     </v-row>
+    <v-btn
+      :class="{ active: isActive }"
+      class="booking-course"
+      color="grey darken-3"
+      @mouseover="isActive = true"
+      @mouseleave="isActive = false"
+      dark
+      to="/booking"
+    >
+      <p class="booking-course__text">Book now</p>
+      <v-icon>mdi-book-plus-multiple</v-icon>
+    </v-btn>
   </div>
 </template>
 
@@ -36,6 +48,7 @@ export default {
   },
   data () {
     return {
+      isActive: false,
       count: 3,
       advantages: [
         {
@@ -82,3 +95,36 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.booking-course{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 3;
+}
+.booking-course{
+  border-radius: 100%;
+    border-radius: 30px;
+  display: flex;
+  align-items: center;
+  transition: all .4s ease-out;
+  padding: 5px 10px !important;
+  min-width: unset !important;
+  height: 44px !important;
+  &.active{
+    border-radius: 30px;
+    .booking-course__text{
+      margin-right: 10px;
+      width: 100px;
+    }
+  }
+  &__text{
+    margin-bottom: 0;
+    width: 0;
+    overflow: hidden;
+    margin-right: 0;
+    transition: all .4s ease-out .1s;
+  }
+}
+</style>

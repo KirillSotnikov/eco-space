@@ -5,6 +5,21 @@
     <app-card-list title="Popular courses" :subjects="subjects" />
     <app-about-gallery />
     <app-reviews-list title="Courses reviews" :count="3" />
+
+    <v-snackbar
+      v-model="snackbar"
+      :color="snackbarColor"
+      :timeout="6000"
+    >
+      {{ snackbarText }}
+      <v-btn
+        dark
+        text
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
   </div>
 </template>
 
@@ -25,6 +40,8 @@ export default {
   data () {
     return {
       testData: 'Text',
+      snackbar: false,
+      snackbarText: '',
       subjects: [
         {
           url: 'https://usercontent2.hubstatic.com/14333385.jpg',
@@ -70,7 +87,13 @@ export default {
         }
       ]
     }
+  },
+  asyncData ({ query }) {
+    return {
+      snackbar: query.snackbar,
+      snackbarText: query.snackbarText,
+      snackbarColor: query.snackbarColor
+    }
   }
 }
-
 </script>

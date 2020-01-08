@@ -42,6 +42,18 @@
           </v-list-item-content>
         </v-list-item>
       </div>
+      <div v-if="isSuperadmin">
+        <v-divider/>
+        <h3 class="px-4 pt-3">SuperAdmin options</h3>
+        <v-list-item v-for="item in superAdminLinks" :key="item.title" @click="goTo(item.href)">
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </div>
     </v-list>
   </div>
 </template>
@@ -51,6 +63,7 @@ export default {
   data () {
     return {
       isAuthorised: true,
+      isSuperadmin: true,
       links: [
         { title: 'Home', icon: 'mdi-home-city', href: '/' },
         { title: 'About Us', icon: 'mdi-auto-fix', href: '/about' },
@@ -59,6 +72,10 @@ export default {
         { title: 'Reviews', icon: 'mdi-message-draw', href: '/reviews' },
         { title: 'Booking', icon: 'mdi-application-import', href: '/booking' },
         { title: 'Contact Us', icon: 'mdi-contact-mail-outline', href: '/contact-us' }
+
+      ],
+      superAdminLinks: [
+        { title: 'Courses list', icon: 'mdi-home-city', href: '/courses/list' }
 
       ],
       userInfo: {

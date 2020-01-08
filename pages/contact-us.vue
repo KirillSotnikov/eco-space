@@ -19,15 +19,10 @@
         @input="$v.email.$touch()"
         @blur="$v.email.$touch()"
       ></v-text-field>
-      <v-select
-        v-model="select"
-        :items="items"
-        :error-messages="selectErrors"
-        label="Item"
-        required
-        @change="$v.select.$touch()"
-        @blur="$v.select.$touch()"
-      ></v-select>
+      <v-textarea
+        label="Comment"
+        v-model="commentValue"
+      ></v-textarea>
       <v-checkbox
         v-model="checkbox"
         :error-messages="checkboxErrors"
@@ -36,7 +31,6 @@
         @change="$v.checkbox.$touch()"
         @blur="$v.checkbox.$touch()"
       ></v-checkbox>
-
       <v-btn class="mr-4" @click="submit">submit</v-btn>
       <v-btn @click="clear">clear</v-btn>
     </form>
@@ -53,7 +47,6 @@ export default {
   validations: {
     name: { required, maxLength: maxLength(10) },
     email: { required, email },
-    select: { required },
     checkbox: {
       checked (val) {
         return val
@@ -64,14 +57,8 @@ export default {
   data: () => ({
     name: '',
     email: '',
-    select: null,
-    items: [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4'
-    ],
-    checkbox: false
+    checkbox: false,
+    commentValue: ''
   }),
 
   computed: {
@@ -79,12 +66,6 @@ export default {
       const errors = []
       if (!this.$v.checkbox.$dirty) { return errors }
       !this.$v.checkbox.checked && errors.push('You must agree to continue!')
-      return errors
-    },
-    selectErrors () {
-      const errors = []
-      if (!this.$v.select.$dirty) { return errors }
-      !this.$v.select.required && errors.push('Item is required')
       return errors
     },
     nameErrors () {
@@ -111,8 +92,7 @@ export default {
       this.$v.$reset()
       this.name = ''
       this.email = ''
-      this.select = null
-      this.checkbox = false
+      this.commentValue = ''
     }
   }
 }

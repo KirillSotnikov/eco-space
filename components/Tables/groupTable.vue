@@ -9,6 +9,9 @@
     <template v-slot:item.count="{ item }">
       <v-chip :color="getColor(item.count)" dark>{{ item.count }}</v-chip>
     </template>
+    <template v-slot:item.progress="{ item }">
+      {{item.progress}}%
+    </template>
     <template v-slot:item.actions="{ item }">
       <v-btn
         :to="`groups/${item.name}`"
@@ -49,7 +52,7 @@
     :isActive="isActiveDialog"
     :name="groupName"
     title="Are you sure?"
-    :description="`You will delete group - ${groupName}`" />
+    :description="`Do you want to delete ${groupName}?`" />
 </v-container>
 </template>
 
@@ -83,7 +86,7 @@ export default {
           actions: 1,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '1%'
+          progress: '1'
         },
         {
           name: 'English',
@@ -91,7 +94,7 @@ export default {
           actions: 2,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '1%'
+          progress: '1'
         },
         {
           name: 'Biology',
@@ -99,7 +102,7 @@ export default {
           actions: 3,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '7%'
+          progress: '7'
         },
         {
           name: 'Biology',
@@ -107,7 +110,7 @@ export default {
           actions: 4,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '8%'
+          progress: '8'
         },
         {
           name: 'Physics',
@@ -115,7 +118,7 @@ export default {
           actions: 5,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '16%'
+          progress: '16'
         },
         {
           name: 'History',
@@ -123,7 +126,7 @@ export default {
           actions: 6,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '0%'
+          progress: '0'
         },
         {
           name: 'HTML + CSS',
@@ -131,7 +134,7 @@ export default {
           actions: 7,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '2%'
+          progress: '2'
         },
         {
           name: 'JavaScript',
@@ -139,7 +142,7 @@ export default {
           actions: 8,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '45%'
+          progress: '45'
         },
         {
           name: 'Guitar',
@@ -147,7 +150,7 @@ export default {
           actions: 9,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '22%'
+          progress: '22'
         },
         {
           name: 'Piano',
@@ -155,7 +158,7 @@ export default {
           actions: 10,
           startDate: '02.10.2020',
           endDate: '02.10.2021',
-          progress: '6%'
+          progress: '6'
         }
       ]
     }

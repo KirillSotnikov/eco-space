@@ -29,19 +29,13 @@
             >
               Read
             </v-btn>
-            <v-btn
-              text
-              color="orange"
-            >
-              Bookmark
-            </v-btn>
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
-            <v-btn icon>
+            <!-- <v-btn icon>
               <v-icon>mdi-share-variant</v-icon>
-            </v-btn>
+            </v-btn> -->
           </v-card-actions>
         </v-card>
       </v-col>

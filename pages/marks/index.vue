@@ -1,5 +1,5 @@
 <template>
-  <app-account-marks :title="`Marks of user-${pageId}`" />
+  <app-account-marks :title="`Marks of user - ${userId}`" />
 </template>
 
 <script>
@@ -8,9 +8,9 @@ export default {
   components: {
     'app-account-marks': accountMarks
   },
-  asyncData ({ params }) {
+  asyncData ({ query }) {
     return {
-      pageId: params.id
+      userId: query.userId
     }
   }
 }

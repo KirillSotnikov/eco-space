@@ -7,8 +7,8 @@
           <img src="https://randomuser.me/api/portraits/women/81.jpg">
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title>Jane Smith</v-list-item-title>
-          <v-list-item-subtitle>Logged In</v-list-item-subtitle>
+          <v-list-item-title>{{userInfo.firstName}} {{userInfo.secondName}}</v-list-item-title>
+          <v-list-item-subtitle>{{userInfo.status}}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-list-item v-else two-line>
@@ -71,7 +71,8 @@ export default {
       userInfo: {
         avatar: 'https://randomuser.me/api/portraits/women/81.jpg',
         firstName: 'Jane',
-        secondName: 'Smith'
+        secondName: 'Smith',
+        status: 'Pupil'
       }
     }
   },

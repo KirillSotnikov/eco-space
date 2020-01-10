@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="mb-7">Edit - {{courseName}}</h1>
+    <h1 class="mb-7">Create new course</h1>
     <app-courses-form
       :startCourseDate="startCourseDate"
       :courseDescription="courseDescription"
@@ -8,8 +8,8 @@
       :selectedTeachers="selectedTeachers"
       :advantages="advantages"
       :coursesDuration="coursesDuration"
-      btnText="Edit"
-      btnIcon="mdi-pencil"
+      btnText="Create"
+      btnIcon="mdi-plus"
     />
   </v-container>
 </template>
@@ -32,10 +32,10 @@ export default {
   },
   data () {
     return {
-      coursesDuration: '2 monthes',
+      coursesDuration: '',
       startCourseDate: new Date().toISOString().substr(0, 10),
-      courseDescription: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur optio culpa placeat adipisci rem vero expedita autem, animi assumenda praesentium eum perspiciatis pariatur? Vero hic necessitatibus et eum aliquid qui!',
-      selectedTeachers: ['Sandra Adams', 'Britta Holt'],
+      courseDescription: '',
+      selectedTeachers: [],
       teachers: [
         { name: 'Sandra Adams', group: 'Group 1', avatar: srcs[1], id: 1 },
         { name: 'Ali Connors', group: 'Group 1', avatar: srcs[2], id: 2 },
@@ -46,20 +46,7 @@ export default {
         { name: 'John Smith', group: 'Group 2', avatar: srcs[1], id: 7 },
         { name: 'Sandra Williams', group: 'Group 2', avatar: srcs[3], id: 8 }
       ],
-      advantages: [
-        {
-          title: 'Advantage 1',
-          description: 'Advantage description 1'
-        },
-        {
-          title: 'Advantage 2',
-          description: 'Advantage description 1'
-        },
-        {
-          title: 'Advantage 3',
-          description: 'Advantage description 1'
-        }
-      ]
+      advantages: []
     }
   },
   components: {

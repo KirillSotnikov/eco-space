@@ -5,7 +5,6 @@
     :headers="headers"
     :items="desserts"
     class="elevation-1 px-2"
-    :items-per-page="5"
   >
     <template v-slot:item.actions="{ item }">
       <v-btn
@@ -124,7 +123,11 @@ export default {
       this.isActiveDialog = true
       this.groupName = name
     },
-    closeDialog () {
+    closeDialog (boolean) {
+      if (boolean) {
+        const index = this.desserts.findIndex(e => e.name === this.groupName)
+        this.desserts.splice(index, 1)
+      }
       this.isActiveDialog = false
       this.groupName = ''
     }

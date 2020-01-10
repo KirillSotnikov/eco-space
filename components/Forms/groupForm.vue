@@ -16,7 +16,6 @@
             outlined
             dense
             v-model="teacherName"
-            :disabled="!isSuperadmin"
             item-color="white"
             :items="teachers"
           ></v-autocomplete>

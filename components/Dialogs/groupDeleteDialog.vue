@@ -6,8 +6,8 @@
         <v-card-text>{{description}}</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn :color="firstColor" text @click="closeMethod">Disagree</v-btn>
-          <v-btn :color="secondColor" text @click="closeMethod">Agree</v-btn>
+          <v-btn :color="firstColor" text @click="closeMethod(false)">Disagree</v-btn>
+          <v-btn :color="secondColor" text @click="closeMethod(true)">Agree</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
